@@ -1,0 +1,55 @@
+---
+import { standards } from "../data/standards";
+import Card from "./Card.astro";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section class="featured">
+
+  <div class="container">
+
+    <SectionTitle
+      title="Featured Standards"
+      subtitle="Explore the most important international standards used in Medical Device Regulatory Affairs."
+    />
+
+    <div class="grid">
+
+      {
+        standards.map((standard) => (
+
+          <Card
+            title={standard.title}
+            description={standard.description}
+            category={standard.category}
+            link={standard.url}
+          />
+
+        ))
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.featured{
+    padding:90px 0;
+    background:#ffffff;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+</style>

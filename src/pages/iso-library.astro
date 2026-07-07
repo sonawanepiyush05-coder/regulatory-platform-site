@@ -1,0 +1,158 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout>
+
+<Navbar />
+
+<section class="iso">
+
+    <h1>ISO & Regulatory Library</h1>
+
+    <p>
+        Browse international standards, regulations and guidance documents used in Medical Device Regulatory Affairs.
+    </p>
+
+    <div class="grid">
+
+        <a class="card" href="#">
+            <h3>📘 ISO 13485</h3>
+            <span>Quality Management System</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>⚠ ISO 14971</h3>
+            <span>Risk Management</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>💻 IEC 62304</h3>
+            <span>Medical Device Software</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>⚡ IEC 60601</h3>
+            <span>Electrical Medical Equipment</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>🧬 ISO 10993</h3>
+            <span>Biological Evaluation</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>🏷 ISO 15223-1</h3>
+            <span>Medical Device Symbols</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>📦 ISO 20417</h3>
+            <span>Information Supplied by Manufacturer</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>🇪🇺 EU MDR 2017/745</h3>
+            <span>European Medical Device Regulation</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>🇮🇳 MDR 2017</h3>
+            <span>Medical Device Rules - India</span>
+        </a>
+
+        <a class="card" href="#">
+            <h3>🇺🇸 FDA 21 CFR 820</h3>
+            <span>Quality System Regulation</span>
+        </a>
+
+    </div>
+
+</section>
+
+</Layout>
+
+<style>
+
+.iso{
+
+padding:80px 8%;
+
+text-align:center;
+
+}
+
+.iso h1{
+
+font-size:54px;
+
+color:#0f172a;
+
+margin-bottom:15px;
+
+}
+
+.iso p{
+
+font-size:22px;
+
+color:#64748b;
+
+margin-bottom:60px;
+
+max-width:900px;
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card h3{
+
+color:#2563eb;
+
+margin-bottom:10px;
+
+}
+
+.card span{
+
+color:#64748b;
+
+}
+
+</style>

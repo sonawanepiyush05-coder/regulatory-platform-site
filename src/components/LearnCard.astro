@@ -1,0 +1,62 @@
+---
+const { title, description, url, level } = Astro.props;
+---
+
+<a class="card" href={url}>
+
+    <span class="level">{level}</span>
+
+    <h3>{title}</h3>
+
+    <p>{description}</p>
+
+    <span class="read">
+        Read Topic →
+    </span>
+
+</a>
+
+<style>
+
+.card{
+    display:block;
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    text-decoration:none;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.level{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:20px;
+    background:#dbeafe;
+    color:#2563eb;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#0f172a;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#64748b;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.read{
+    color:#2563eb;
+    font-weight:bold;
+}
+
+</style>

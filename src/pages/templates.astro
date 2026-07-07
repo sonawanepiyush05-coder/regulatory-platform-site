@@ -1,0 +1,142 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout>
+
+<Navbar />
+
+<section class="templates">
+
+  <h1>Documentation Templates</h1>
+
+  <p>
+    Browse regulatory document templates used in Medical Device Regulatory Affairs.
+  </p>
+
+  <div class="grid">
+
+    <a class="card" href="#">
+      <h3>📄 IFU</h3>
+      <span>Instructions For Use</span>
+    </a>
+
+    <a class="card" href="#">
+      <h3>📑 CER</h3>
+      <span>Clinical Evaluation Report</span>
+    </a>
+
+    <a class="card" href="#">
+      <h3>⚠ RMF</h3>
+      <span>Risk Management File</span>
+    </a>
+
+    <a class="card" href="#">
+      <h3>📊 PMS</h3>
+      <span>Post Market Surveillance</span>
+    </a>
+
+    <a class="card" href="#">
+      <h3>📈 PMCF</h3>
+      <span>Post Market Clinical Follow-up</span>
+    </a>
+
+    <a class="card" href="#">
+      <h3>📝 SOP</h3>
+      <span>Standard Operating Procedures</span>
+    </a>
+
+    <a class="card" href="#">
+      <h3>📁 Technical File</h3>
+      <span>Technical Documentation</span>
+    </a>
+
+    <a class="card" href="#">
+      <h3>📦 Design Dossier</h3>
+      <span>EU MDR Documentation</span>
+    </a>
+
+  </div>
+
+</section>
+
+</Layout>
+
+<style>
+
+.templates{
+
+padding:80px 8%;
+
+text-align:center;
+
+}
+
+.templates h1{
+
+font-size:54px;
+
+color:#0f172a;
+
+margin-bottom:15px;
+
+}
+
+.templates p{
+
+font-size:22px;
+
+color:#64748b;
+
+margin-bottom:60px;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:16px;
+
+text-decoration:none;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card h3{
+
+color:#2563eb;
+
+margin-bottom:10px;
+
+}
+
+.card span{
+
+color:#64748b;
+
+}
+
+</style>

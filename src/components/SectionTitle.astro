@@ -1,0 +1,51 @@
+---
+interface Props{
+    title:string;
+    subtitle?:string;
+}
+
+const {
+    title,
+    subtitle=""
+}=Astro.props;
+---
+
+<div class="section-title">
+
+<h2>{title}</h2>
+
+{subtitle && <p>{subtitle}</p>}
+
+</div>
+
+<style>
+
+.section-title{
+
+text-align:center;
+
+margin-bottom:55px;
+
+}
+
+.section-title h2{
+
+font-size:42px;
+
+margin-bottom:15px;
+
+}
+
+.section-title p{
+
+max-width:750px;
+
+margin:auto;
+
+color:#64748b;
+
+line-height:1.7;
+
+}
+
+</style>

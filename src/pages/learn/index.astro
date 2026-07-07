@@ -1,0 +1,115 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+
+import LearnCard from "../../components/LearnCard.astro";
+import { learnTopics } from "../../data/learnTopics.js";
+---
+
+<Layout title="Learn">
+
+<Navbar />
+
+<section class="hero">
+
+  <div class="container">
+
+    <span class="badge">
+      Medical Device Regulatory Affairs
+    </span>
+
+    <h1>Learning Center</h1>
+
+    <p>
+      Learn Medical Device Regulatory Affairs from beginner to advanced with
+      structured topics and practical documentation.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="topics">
+
+  <div class="container">
+
+    <h2>Learning Roadmap</h2>
+
+    <div class="grid">
+
+      {
+        learnTopics.map((topic) => (
+
+          <LearnCard
+            title={topic.title}
+            description={topic.description}
+            url={topic.url}
+            level={topic.level}
+          />
+
+        ))
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+<Footer />
+
+</Layout>
+
+<style>
+
+.hero{
+    padding:90px 0;
+    background:#eff6ff;
+    text-align:center;
+}
+
+.container{
+    width:min(1200px,90%);
+    margin:auto;
+}
+
+.badge{
+    display:inline-block;
+    background:#dbeafe;
+    color:#2563eb;
+    padding:8px 18px;
+    border-radius:30px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:58px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:750px;
+    margin:auto;
+    color:#64748b;
+    font-size:20px;
+}
+
+.topics{
+    padding:80px 0;
+}
+
+.topics h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+</style>
