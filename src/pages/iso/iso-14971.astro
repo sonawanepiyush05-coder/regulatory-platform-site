@@ -1,0 +1,90 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+---
+
+<Layout title="ISO 14971">
+<Navbar />
+
+<section class="hero">
+<div class="container">
+
+<h1>ISO 14971:2019</h1>
+
+<p>
+ISO 14971 specifies a systematic process for identifying hazards,
+estimating and evaluating risks, controlling risks, and monitoring
+the effectiveness of those controls throughout the medical device
+life cycle.
+</p>
+
+</div>
+</section>
+
+<section class="content">
+
+<div class="container">
+
+<h2>Purpose</h2>
+
+<p>
+Provides a globally accepted framework for Risk Management of Medical Devices.
+Manufacturers identify hazards, estimate risks, implement controls,
+and continuously monitor residual risks.
+</p>
+
+<h2>Major Sections</h2>
+
+<ul>
+<li>Risk Management Plan</li>
+<li>Hazard Identification</li>
+<li>Risk Analysis</li>
+<li>Risk Evaluation</li>
+<li>Risk Control</li>
+<li>Residual Risk Evaluation</li>
+<li>Risk Management Report</li>
+<li>Production & Post Production Monitoring</li>
+</ul>
+
+<h2>Common Documents</h2>
+
+<ul>
+<li>Risk Management Plan</li>
+<li>Risk Analysis</li>
+<li>FMEA</li>
+<li>FTA</li>
+<li>Benefit Risk Analysis</li>
+<li>Risk Management Report</li>
+</ul>
+
+<a
+class="btn"
+href="https://www.iso.org/standard/72704.html"
+target="_blank">
+Official ISO 14971 Page
+</a>
+
+</div>
+
+</section>
+
+</Layout>
+
+<style>
+.hero{padding:80px 0;background:#eff6ff;text-align:center;}
+.container{width:min(1100px,90%);margin:auto;}
+.hero h1{font-size:52px;}
+.hero p{font-size:19px;color:#64748b;line-height:1.8;}
+.content{padding:70px 0;}
+.content h2{margin-top:40px;}
+.content p,.content li{line-height:1.8;color:#475569;}
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:14px 24px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:10px;
+}
+</style>

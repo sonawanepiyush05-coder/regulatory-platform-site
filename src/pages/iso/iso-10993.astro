@@ -1,0 +1,85 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+---
+
+<Layout title="ISO 10993">
+<Navbar />
+
+<section class="hero">
+<div class="container">
+
+<h1>ISO 10993 Series</h1>
+
+<p>
+ISO 10993 is the international standard for Biological Evaluation
+of Medical Devices. It helps determine whether materials used
+in medical devices are biologically safe.
+</p>
+
+</div>
+</section>
+
+<section class="content">
+
+<div class="container">
+
+<h2>Scope</h2>
+
+<p>
+Evaluates biological safety of materials that come in contact
+with patients.
+</p>
+
+<h2>Important Parts</h2>
+
+<ul>
+<li>ISO 10993-1 Biological Evaluation</li>
+<li>ISO 10993-5 Cytotoxicity</li>
+<li>ISO 10993-10 Irritation & Sensitization</li>
+<li>ISO 10993-11 Systemic Toxicity</li>
+<li>ISO 10993-18 Chemical Characterization</li>
+</ul>
+
+<h2>Common Tests</h2>
+
+<ul>
+<li>Cytotoxicity</li>
+<li>Sensitization</li>
+<li>Irritation</li>
+<li>Genotoxicity</li>
+<li>Hemocompatibility</li>
+<li>Implantation</li>
+</ul>
+
+<a
+class="btn"
+href="https://www.iso.org/committee/45161.html"
+target="_blank">
+Official ISO 10993 Series
+</a>
+
+</div>
+
+</section>
+
+</Layout>
+
+<style>
+.hero{padding:80px 0;background:#eff6ff;text-align:center;}
+.container{width:min(1100px,90%);margin:auto;}
+.hero h1{font-size:52px;}
+.hero p{font-size:19px;color:#64748b;line-height:1.8;}
+.content{padding:70px 0;}
+.content h2{margin-top:40px;}
+.content p,.content li{line-height:1.8;color:#475569;}
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:14px 24px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:10px;
+}
+</style>

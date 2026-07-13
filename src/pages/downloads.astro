@@ -1,0 +1,423 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import { downloads } from "../data/downloads";
+---
+
+<Layout title="Downloads">
+
+  <Navbar />
+
+  <section class="hero">
+    <div class="container">
+
+      <span class="badge">Downloads Center</span>
+
+      <h1>Regulatory Resource Library</h1>
+
+      <p>
+        Download SOPs, Templates, Validation Protocols,
+        Forms and Regulatory Documentation for
+        Medical Devices.
+      </p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search templates, SOPs, validations..."
+      />
+
+    </div>
+  </section>
+
+  <section class="downloads">
+
+    <div class="container">
+
+      <div class="stats">
+
+        <div class="stat">
+          <h2>{downloads.length}</h2>
+          <p>Total Resources</p>
+        </div>
+
+        <div class="stat">
+          <h2>Templates</h2>
+          <p>Ready to Use</p>
+        </div>
+
+        <div class="stat">
+          <h2>SOPs</h2>
+          <p>Professional Documents</p>
+        </div>
+
+        <div class="stat">
+          <h2>Free</h2>
+          <p>Download Anytime</p>
+        </div>
+
+      </div>
+
+      <div class="filters">
+
+        <button class="filter active" data-filter="All">
+          All
+        </button>
+
+        <button class="filter" data-filter="Template">
+          Templates
+        </button>
+
+        <button class="filter" data-filter="SOP">
+          SOPs
+        </button>
+
+        <button class="filter" data-filter="Validation">
+          Validation
+        </button>
+
+        <button class="filter" data-filter="Form">
+          Forms
+        </button>
+
+      </div>
+
+      <div id="grid" class="grid">
+
+        {downloads.map((item) => (
+
+          <div
+            class="card"
+            data-category={item.category}
+            data-title={item.title.toLowerCase()}
+          >
+
+            <div class="top">
+
+              <span class="category">
+                {item.category}
+              </span>
+
+              <span class="type">
+                {item.type}
+              </span>
+
+            </div>
+
+            <h3>{item.title}</h3>
+
+            <p>{item.description}</p>
+
+            <div class="meta">
+
+              <span>{item.version}</span>
+
+              <span>{item.updated}</span>
+
+            </div>
+
+            <div class="buttons">
+
+              <a
+                class="preview"
+                href={item.file}
+                target="_blank"
+              >
+                👁 Preview
+              </a>
+
+              <a
+                class="download"
+                href={item.file}
+                download
+              >
+                ⬇ Download
+              </a>
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
+    </div>
+
+  </section>
+
+</Layout>
+
+<script>
+
+const search = document.getElementById("searchInput");
+
+const cards = document.querySelectorAll(".card");
+
+const buttons = document.querySelectorAll(".filter");
+
+let category = "All";
+
+function filterCards(){
+
+  const text = search.value.toLowerCase();
+
+  cards.forEach(card=>{
+
+    const title = card.dataset.title || "";
+
+    const cat = card.dataset.category || "";
+
+    const matchTitle = title.includes(text);
+
+    const matchCategory =
+      category === "All" || cat === category;
+
+    card.style.display =
+      (matchTitle && matchCategory)
+      ? "block"
+      : "none";
+
+  });
+
+}
+
+search?.addEventListener("input",filterCards);
+
+buttons.forEach(btn=>{
+
+  btn.addEventListener("click",()=>{
+
+    buttons.forEach(b=>b.classList.remove("active"));
+
+    btn.classList.add("active");
+
+    category = btn.dataset.filter || "All";
+
+    filterCards();
+
+  });
+
+});
+
+</script>
+
+<style>
+.hero{
+  padding:90px 0;
+  background:#eff6ff;
+  text-align:center;
+}
+
+.container{
+  width:min(1200px,92%);
+  margin:auto;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 18px;
+  background:#dbeafe;
+  color:#2563eb;
+  border-radius:30px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:56px;
+  color:#0f172a;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:750px;
+  margin:auto;
+  color:#64748b;
+  line-height:1.8;
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+#searchInput{
+  width:100%;
+  max-width:650px;
+  padding:18px;
+  font-size:17px;
+  border-radius:12px;
+  border:1px solid #cbd5e1;
+  outline:none;
+}
+
+#searchInput:focus{
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+.downloads{
+  padding:80px 0;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  margin-bottom:50px;
+}
+
+.stat{
+  background:#fff;
+  border-radius:18px;
+  padding:30px;
+  text-align:center;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.stat h2{
+  color:#2563eb;
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.stat p{
+  color:#64748b;
+}
+
+.filters{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-bottom:40px;
+}
+
+.filter{
+  border:none;
+  background:#e2e8f0;
+  padding:12px 24px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+  transition:.3s;
+}
+
+.filter:hover{
+  background:#cbd5e1;
+}
+
+.filter.active{
+  background:#2563eb;
+  color:#fff;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:28px;
+}
+
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:28px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.category{
+  background:#dbeafe;
+  color:#2563eb;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.type{
+  background:#ecfeff;
+  color:#0891b2;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:700;
+}
+
+.card h3{
+  color:#0f172a;
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#64748b;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.meta{
+  display:flex;
+  justify-content:space-between;
+  color:#64748b;
+  font-size:14px;
+  margin-bottom:25px;
+}
+
+.buttons{
+  display:flex;
+  gap:15px;
+}
+
+.preview,
+.download{
+  flex:1;
+  text-align:center;
+  padding:13px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+  transition:.3s;
+}
+
+.preview{
+  background:#e2e8f0;
+  color:#0f172a;
+}
+
+.preview:hover{
+  background:#cbd5e1;
+}
+
+.download{
+  background:#2563eb;
+  color:#fff;
+}
+
+.download:hover{
+  background:#1d4ed8;
+}
+
+@media (max-width:768px){
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .buttons{
+    flex-direction:column;
+  }
+
+}
+</style>

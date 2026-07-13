@@ -17,14 +17,14 @@ level:"Beginner"
 {
 title:"ISO 13485",
 description:"Medical Device Quality Management System.",
-url:"/learn/iso-13485",
+url:"/iso/iso-13485",
 level:"Intermediate"
 },
 
 {
 title:"ISO 14971",
 description:"Risk Management for Medical Devices.",
-url:"/learn/iso-14971",
+url:"/iso/iso-14971",
 level:"Intermediate"
 },
 

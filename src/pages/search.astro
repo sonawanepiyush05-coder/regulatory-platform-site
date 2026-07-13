@@ -1,0 +1,188 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const searchItems = [
+  {
+    title: "Medical Device Basics",
+    category: "Learn",
+    url: "/learn/medical-device-basics",
+  },
+  {
+    title: "Device Classification",
+    category: "Learn",
+    url: "/learn/device-classification",
+  },
+  {
+    title: "ISO 13485",
+    category: "ISO Standard",
+    url: "/iso/iso-13485",
+  },
+  {
+    title: "ISO 14971",
+    category: "ISO Standard",
+    url: "/iso/iso-14971",
+  },
+  {
+    title: "ISO 10993",
+    category: "ISO Standard",
+    url: "/iso/iso-10993",
+  },
+  {
+    title: "IEC 62304",
+    category: "ISO Standard",
+    url: "/iso/iec-62304",
+  },
+  {
+    title: "Clinical Evaluation",
+    category: "Learn",
+    url: "/learn/clinical-evaluation",
+  },
+  {
+    title: "Post Market Surveillance",
+    category: "Learn",
+    url: "/learn/post-market-surveillance",
+  },
+  {
+    title: "Templates",
+    category: "Resources",
+    url: "/templates",
+  },
+  {
+    title: "Downloads",
+    category: "Resources",
+    url: "/downloads",
+  },
+];
+---
+
+<Layout title="Search">
+  <Navbar />
+
+  <section class="hero">
+    <div class="container">
+      <h1>Search ReguDocs</h1>
+      <p>Search learning topics, ISO standards, templates and downloads.</p>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search..."
+      />
+    </div>
+  </section>
+
+  <section class="results">
+    <div class="container">
+
+      <div id="resultsGrid" class="grid">
+
+        {searchItems.map((item) => (
+          <a
+            class="card"
+            href={item.url}
+            data-title={item.title.toLowerCase()}
+          >
+            <span>{item.category}</span>
+            <h3>{item.title}</h3>
+          </a>
+        ))}
+
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const input = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card");
+
+  input?.addEventListener("input", (e) => {
+    const value = e.target.value.toLowerCase();
+
+    cards.forEach((card) => {
+      const title = card.dataset.title || "";
+
+      if (title.includes(value)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+</script>
+
+<style>
+.hero{
+  padding:80px 0;
+  background:#eff6ff;
+  text-align:center;
+}
+
+.container{
+  width:min(1100px,90%);
+  margin:auto;
+}
+
+.hero h1{
+  font-size:52px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  color:#64748b;
+  margin-bottom:30px;
+  font-size:18px;
+}
+
+#searchInput{
+  width:100%;
+  max-width:650px;
+  padding:16px;
+  border-radius:10px;
+  border:1px solid #cbd5e1;
+  font-size:17px;
+}
+
+.results{
+  padding:70px 0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+
+.card{
+  display:block;
+  background:#fff;
+  border-radius:18px;
+  padding:25px;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card span{
+  display:inline-block;
+  background:#dbeafe;
+  color:#2563eb;
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+.card h3{
+  color:#0f172a;
+}
+</style>

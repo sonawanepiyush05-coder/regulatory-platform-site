@@ -1,0 +1,283 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+---
+
+<Layout title="Contact">
+
+<Navbar />
+
+<section class="hero">
+
+  <div class="container">
+
+    <span class="badge">Contact ReguDocs</span>
+
+    <h1>Let's Connect</h1>
+
+    <p>
+      Have questions about Medical Device Regulatory Affairs, ISO Standards,
+      Regulatory Documentation, or collaboration opportunities? Feel free to
+      reach out.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="contact">
+
+  <div class="container">
+
+    <div class="grid">
+
+      <!-- Contact Information -->
+
+      <div class="info">
+
+        <h2>Contact Information</h2>
+
+        <p>
+          I'm always happy to connect with students, researchers,
+          QA/RA professionals, and industry experts interested in
+          Medical Device Regulatory Affairs.
+        </p>
+
+        <div class="item">
+          <strong>👤 Name</strong>
+          <p>Piyush Sonawane</p>
+        </div>
+
+        <div class="item">
+          <strong>📧 Email</strong>
+          <p>
+            <a href="mailto:sonawanepiyush05@gmail.com">
+              sonawanepiyush05@gmail.com
+            </a>
+          </p>
+        </div>
+
+        <div class="item">
+          <strong>📱 Mobile</strong>
+          <p>
+            <a href="tel:+918010853416">
+              +91 8010853416
+            </a>
+          </p>
+        </div>
+
+        <div class="item">
+          <strong>💼 LinkedIn</strong>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/piyushsonawane05"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              linkedin.com/in/piyushsonawane05
+            </a>
+          </p>
+        </div>
+
+        <div class="item">
+          <strong>💻 GitHub</strong>
+          <p>
+            <a
+              href="https://github.com/sonawanepiyush05-coder"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              github.com/sonawanepiyush05-coder
+            </a>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Contact Form -->
+
+      <form class="form">
+
+        <input
+          type="text"
+          placeholder="Your Name"
+          required
+        />
+
+        <input
+          type="email"
+          placeholder="Your Email"
+          required
+        />
+
+        <input
+          type="text"
+          placeholder="Subject"
+        />
+
+        <textarea
+          rows="6"
+          placeholder="Write your message..."
+        ></textarea>
+
+        <button type="submit">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+</Layout>
+
+<style>
+
+.hero{
+  padding:90px 0;
+  background:#eff6ff;
+  text-align:center;
+}
+
+.container{
+  width:min(1200px,90%);
+  margin:auto;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 18px;
+  background:#dbeafe;
+  color:#2563eb;
+  border-radius:30px;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:58px;
+  margin-bottom:20px;
+  color:#0f172a;
+}
+
+.hero p{
+  max-width:760px;
+  margin:auto;
+  font-size:20px;
+  line-height:1.8;
+  color:#64748b;
+}
+
+.contact{
+  padding:90px 0;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:60px;
+  align-items:start;
+}
+
+.info{
+  background:white;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.info h2{
+  margin-bottom:20px;
+  color:#0f172a;
+}
+
+.info p{
+  color:#64748b;
+  line-height:1.8;
+}
+
+.item{
+  margin-top:28px;
+}
+
+.item strong{
+  display:block;
+  margin-bottom:8px;
+  color:#0f172a;
+}
+
+.info a{
+  color:#2563eb;
+  text-decoration:none;
+  font-weight:600;
+  word-break:break-word;
+}
+
+.info a:hover{
+  text-decoration:underline;
+}
+
+.form{
+  background:white;
+  padding:35px;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.form input,
+.form textarea{
+  padding:16px;
+  border:1px solid #cbd5e1;
+  border-radius:10px;
+  font-size:16px;
+  font-family:inherit;
+  transition:.3s;
+}
+
+.form input:focus,
+.form textarea:focus{
+  outline:none;
+  border-color:#2563eb;
+  box-shadow:0 0 0 3px rgba(37,99,235,.15);
+}
+
+.form button{
+  padding:16px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:10px;
+  font-size:17px;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.form button:hover{
+  background:#1d4ed8;
+  transform:translateY(-2px);
+}
+
+@media(max-width:900px){
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:18px;
+  }
+
+}
+
+</style>

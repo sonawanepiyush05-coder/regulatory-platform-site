@@ -1,0 +1,93 @@
+---
+import { templates } from "../data/templates";
+import Card from "./Card.astro";
+---
+
+<section class="latest">
+
+  <div class="container">
+
+    <h2>Latest Regulatory Templates</h2>
+
+    <p>
+      Download commonly used Medical Device Regulatory Affairs document templates.
+    </p>
+
+    <div class="grid">
+
+      {
+        templates.map((template) => (
+
+          <Card
+            title={template.title}
+            description={template.description}
+            category={template.category}
+            link="/templates"
+          />
+
+        ))
+      }
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+
+.latest{
+
+padding:90px 0;
+
+background:#f8fbff;
+
+}
+
+.container{
+
+width:min(1200px,90%);
+
+margin:auto;
+
+}
+
+.latest h2{
+
+text-align:center;
+
+font-size:42px;
+
+margin-bottom:15px;
+
+color:#0f172a;
+
+}
+
+.latest p{
+
+text-align:center;
+
+max-width:750px;
+
+margin:0 auto 50px;
+
+color:#64748b;
+
+font-size:18px;
+
+line-height:1.6;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+</style>

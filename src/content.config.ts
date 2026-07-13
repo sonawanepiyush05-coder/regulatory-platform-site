@@ -1,6 +1,6 @@
 import { defineCollection, z } from "astro:content";
 
-const learnCollection = defineCollection({
+const learn = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -8,7 +8,7 @@ const learnCollection = defineCollection({
   }),
 });
 
-const isoCollection = defineCollection({
+const iso = defineCollection({
   schema: z.object({
     title: z.string(),
     category: z.string(),
@@ -16,6 +16,6 @@ const isoCollection = defineCollection({
 });
 
 export const collections = {
-  learn: learnCollection,
-  iso: isoCollection,
+  learn,
+  iso,
 };
