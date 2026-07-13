@@ -1,44 +1,68 @@
 <section class="quick-access">
 
-  <h2>Quick Access</h2>
+  <div class="container">
 
-  <div class="grid">
+    <h2>Quick Access</h2>
 
-    <a href="/iso-library" class="card">
-      <div class="icon">📘</div>
-      <h3>ISO Standards</h3>
-      <p>Browse all ISO standards.</p>
-    </a>
+    <p class="subtitle">
+      Quickly access the most important Regulatory Affairs resources.
+    </p>
 
-    <a href="/templates" class="card">
-      <div class="icon">📄</div>
-      <h3>Templates</h3>
-      <p>Download regulatory templates.</p>
-    </a>
+    <div class="grid">
 
-    <a href="/learn" class="card">
-      <div class="icon">🎓</div>
-      <h3>Learn</h3>
-      <p>Structured learning modules.</p>
-    </a>
+      <a href="/iso-library" class="card">
+        <div class="icon">📘</div>
+        <h3>ISO Standards</h3>
+        <p>
+          Explore ISO 13485, ISO 14971, ISO 10993, IEC 62304 and other
+          medical device standards.
+        </p>
+      </a>
 
-    <a href="#" class="card">
-      <div class="icon">⚠️</div>
-      <h3>Risk Management</h3>
-      <p>ISO 14971 resources.</p>
-    </a>
+      <a href="/templates" class="card">
+        <div class="icon">📄</div>
+        <h3>Templates</h3>
+        <p>
+          Download DMF, RMF, PMS, CER, Validation Protocols and regulatory
+          templates.
+        </p>
+      </a>
 
-    <a href="#" class="card">
-      <div class="icon">📊</div>
-      <h3>Clinical Evaluation</h3>
-      <p>CER & PMCF documents.</p>
-    </a>
+      <a href="/learn" class="card">
+        <div class="icon">🎓</div>
+        <h3>Learn</h3>
+        <p>
+          Follow structured learning modules from beginner to advanced level.
+        </p>
+      </a>
 
-    <a href="#" class="card">
-      <div class="icon">📥</div>
-      <h3>Downloads</h3>
-      <p>PDFs, SOPs & Forms.</p>
-    </a>
+      <a href="/learn/risk-management" class="card">
+        <div class="icon">⚠️</div>
+        <h3>Risk Management</h3>
+        <p>
+          Learn ISO 14971, hazard analysis, risk evaluation and risk control.
+        </p>
+      </a>
+
+      <a href="/learn/clinical-evaluation" class="card">
+        <div class="icon">📊</div>
+        <h3>Clinical Evaluation</h3>
+        <p>
+          Understand Clinical Evaluation Reports (CER), PMCF and clinical
+          evidence.
+        </p>
+      </a>
+
+      <a href="/downloads" class="card">
+        <div class="icon">📥</div>
+        <h3>Downloads</h3>
+        <p>
+          Download SOPs, Templates, Forms, Validation Protocols and other
+          resources.
+        </p>
+      </a>
+
+    </div>
 
   </div>
 
@@ -47,16 +71,29 @@
 <style>
 
 .quick-access{
-    max-width:1200px;
-    margin:90px auto;
-    padding:0 20px;
+    padding:90px 0;
+    background:#ffffff;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
 }
 
 .quick-access h2{
     text-align:center;
-    font-size:38px;
-    margin-bottom:45px;
+    font-size:42px;
     color:#0f172a;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 50px;
+    color:#64748b;
+    font-size:18px;
+    line-height:1.7;
 }
 
 .grid{
@@ -71,28 +108,57 @@
     padding:35px;
     text-decoration:none;
     color:#111827;
-    box-shadow:0 8px 24px rgba(0,0,0,.08);
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
     transition:.3s;
+    border:1px solid #e2e8f0;
 }
 
 .card:hover{
     transform:translateY(-8px);
     box-shadow:0 18px 35px rgba(37,99,235,.15);
+    border-color:#2563eb;
 }
 
 .icon{
-    font-size:42px;
+    font-size:46px;
     margin-bottom:20px;
 }
 
 .card h3{
-    margin-bottom:10px;
     color:#2563eb;
+    margin-bottom:15px;
+    font-size:22px;
 }
 
 .card p{
     color:#64748b;
-    line-height:1.6;
+    line-height:1.7;
+    font-size:16px;
+}
+
+@media(max-width:768px){
+
+.quick-access{
+    padding:70px 0;
+}
+
+.quick-access h2{
+    font-size:34px;
+}
+
+.subtitle{
+    font-size:16px;
+    margin-bottom:35px;
+}
+
+.grid{
+    grid-template-columns:1fr;
+}
+
+.card{
+    padding:28px;
+}
+
 }
 
 </style>
